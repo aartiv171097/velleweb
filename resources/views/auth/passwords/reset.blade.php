@@ -8,7 +8,7 @@
     color: #4793e8;
 }
 </style>
-
+{{-- {{dd($email)}} --}}
 @endsection
 @section('content')
  <div class="col-md-6 col-md-offset-3">
@@ -21,7 +21,8 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+                        {{csrf_field()}}
+                        {{method_field('put')}}
 
                         <input type="hidden" name="token" value="{{ $token }}">
 

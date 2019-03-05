@@ -52,7 +52,6 @@
                             <th>AIPS</th>
                             <th>AIPP</th>
                             <th>Status</th>
-                            <th>Verification</th>
                             
                         </tr>
                     </thead>
@@ -73,24 +72,27 @@
 
                                         <td>{{ $row->email}}</td>
                                         <td>{{ $row->phone}}</td>
-                                        <td><img style="width:100px; border-radius:20%; " src="{{ asset('images/instagram.png') }}">
-                                        <a href="{{route('$row->link')}}"></a><br>
-                                  </td>
+                                        <td>
+                                            <a href="{{ $row->link }}" target="_blank">
+                                                <img style="width:100px; border-radius:20%; " src="{{ asset('images/instagram.png') }}">
+                                            </a>
+                                        </td>
                                         
                                         <td>{{ $row->aips}}</td>
                                         <td>{{ $row->aipp}}</td>
-                                        <td>{{ $row->status}}</td>
-                                        <td><div class="m-list-settings__item">
+                                        <td>
+                                            <div class="m-list-settings__item">
                                                 <span class="m-list-settings__item-label"></span>
-                                                <span class="m-list-settings__item-control">
-                                                    <span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-                                                        <label>
- <input type="checkbox" class="checkboxToggle" data-user-id="{{ $row->id }}" id="checkbox" name="checkbox[]">
-                                                <span>{{ $i }}</span>
-                                                        </label>
-                                                    </span>
+                                                    <span class="m-list-settings__item-control">
+                                                       <span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+                                                            <label>
+                                                      <input type="checkbox" class="checkboxToggle" data-user-id="{{ $row->id }}" {{ $row->status == 1 ? 'checked' : '' }} id="checkbox" name="checkbox[]">
+                                                          <span>{{ $i }}</span>
+                                                    </label>
+                                                   </span>
                                                 </span>
-                                            </div></td>
+                                             </div>
+                                         </td>
 
                                 
 

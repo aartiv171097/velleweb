@@ -51,7 +51,6 @@
                             <th>Email</th>
                             <th>Contact Number</th>
                             <th>Status</th>
-                            <th>Verification</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -66,18 +65,19 @@
                                         <td>{{$row->brand_name}}</td>
                                         <td>{{ $row->email}}</td>
                                         <td>{{ $row->phone}}</td>
-                                        <td>{{ $row->status}}</td>
-                                        <td><div class="m-list-settings__item">
+                                        <td>
+                                         <div class="m-list-settings__item">
                                                 <span class="m-list-settings__item-label"></span>
-                                                <span class="m-list-settings__item-control">
-                                                    <span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-                                                        <label>
-                                                            <input type="checkbox"  class="checkboxToggle" data-camp-id="{{$row->id}}" id="checkbox" name="checkbox[]">
-                                                            <span>{{$row->id}}</span>
-                                                        </label>
-                                                    </span>
+                                                    <span class="m-list-settings__item-control">
+                                                       <span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
+                                                            <label>
+                                                      <input type="checkbox" class="checkboxToggle" data-camp-id="{{ $row->id }}" {{ $row->status == 1 ? 'checked' : '' }} id="checkbox" name="checkbox[]">
+                                                          <span>{{ $row->id }}</span>
+                                                    </label>
+                                                   </span>
                                                 </span>
-                                            </div></td>
+                                             </div>
+                                        </td>
                                         <td>
                                             <a href="{{route('admin.details',$row->id)}}"><button class="btn btn-primary">View Details</button></a></td>
                                         
@@ -111,28 +111,51 @@
 
 		<script src="{{ asset('theme/default/assets/demo/default/custom/crud/datatables/basic/basic.js')}}" type="text/javascript"></script>
 <script>
+  window.pageData = window.pageData || {};
+                $(document).ready(function(){
+                    $('input.checkboxToggle').on('change', function(e){                
+                        console.log(e);
+                        let camp_id = $(this).val();
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ url('api/ChangeStatusCampaign') }}",   
+                            data :{
+                                
+                               'camp_id' : $(this).data('campId'),
+                            },
+                            success: function(response){
+                                console.log(response);
+                            },
+                            error: function(e){
+                                console.log(e);
+                            }
+                        });
+                    
+                    });
+                    
+                });
 
-$(document).ready(function(){
-	$('input.checkboxToggle').on('change', function(e){                
-		console.log(e);
-        var status = $(this).is(':checked') ? 1 : 0;
-		$.ajax({
-			type: "POST",
-			url: "{{ url('api/ChangeStatusCampaign') }}",   
-			data :{
-                'camp_id' : $(this).data('campId'),
-                'status' : status
-			},
-			success: function(response){
-				console.log(response);
-			},
-			error: function(e){
-				console.log(e);
-			}
-		});
+//$(document).ready(function(){
+//	$('input.checkboxToggle').on('change', function(e){                
+//		console.log(e);
+  //      var status = $(this).is(':checked') ? 1 : 0;
+	//	$.ajax({
+	//		type: "POST",
+	//		url: "{{ url('api/ChangeStatusCampaign') }}",   
+	//		data :{
+      //          'camp_id' : $(this).data('campId'),
+        //        'status' : status
+		//	},
+		//	success: function(response){
+		//		console.log(response);
+		//	},
+		//	error: function(e){
+		//		console.log(e);
+		//	}
+		//});
 	
-	});
+	//});
 	
-});
+//});
     </script>
 @endsection

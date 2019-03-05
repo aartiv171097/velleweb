@@ -57,11 +57,11 @@ class ProfileController extends Controller
 
     public function passupdate(Request $request,$user=null)
     {  
-        if(empty($user)){
-            $user = Auth::user()->id;
-        }
+       
 
         $user = User::find($user);
+        // dd($user);
+        // dd($user->makeVisible('password')->toArray());
         $user->password = Hash::make($request->password);
         $user->save();
 

@@ -82,7 +82,7 @@ Route::group(['prefix'=>'password', 'as'=>'password.'], function(){
     // Route::post('/register', 'RegisterController@register')->name('register.store');
   
     Route::post('/password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-    Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.email');
+    Route::put('/password/reset', 'ResetPasswordController@reset')->name('password.email');
     Route::get('/password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
     Route::get('/password/reset/{token}', 'ResetPasswordController@showResetForm')->name('pasword.reset.token');
   

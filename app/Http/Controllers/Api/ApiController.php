@@ -57,16 +57,19 @@ class ApiController extends Controller
     {
         try{
             if(!empty($request->camp_id)){
-                $request->camp_id;
                 $camp_id = $request->camp_id;
                 $camp = Campaign::find($camp_id);
-                if($camp->status == 0){
-                    $camp->status == 1;
+                if($camp->status==0)
+                {
+                    $camp->status = 1; 
                 }
-              else{
-                  $camp->status == 0;
-              }
-              $camp->save();
+               
+                else
+                {
+                    $camp->status = 0;
+                }
+                $camp->save();
+
                 return response()->json(['status'=>200, 'message'=> 'success', 'data'=>$request->all()]);
             } else{
                 return response()->json(['status'=>400, 'message'=> 'params missing']);

@@ -20,7 +20,7 @@
                             @foreach(Auth::user()->AssignCampaign as $key =>$value)
                             <tr>
                                 <td>{{ $value->Campaign->brand_name }}</td>
-                                <td>{{ $value->Campaign->phone }}</td>
+                                <td>{{ $value->Campaign->status == 0 ? 'Active' : 'Completed' }}</td>
                                 <td>{{date('d-m-Y', strtotime($value->Campaign->created_at)) }}</td>
                                 <td> <a href="{{ route('show', $value->id) }}"><button class="btn btn-primary">View Campaign</button></a>
                                   </td>
