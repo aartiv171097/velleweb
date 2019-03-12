@@ -3,12 +3,14 @@
 
         <div class="container">
                 <div class="header_logo">
-                        <a href="#" style="color: #fff !important; font-size:25px; font-weight:700;" >BrandCer</a>
+                        <a href="{{ route('homes') }}" style="color: #fff !important; font-size:25px; font-weight:700;" >BrandCer</a>
                     </div>
                     
                     <nav class="header_menu">
                     	  
-                        <ul class="menu">                            
+                        <ul class="menu"> 
+                            <li><a href="{{ route('userdetail.store') }}">Create Campaign</a>
+                                </li>                           
                         </ul>
                     </nav>
                     

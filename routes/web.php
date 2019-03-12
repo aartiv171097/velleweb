@@ -15,7 +15,7 @@
 
 // --------------------Shubham--------------------
 Auth::routes(['verify'=>true]);
-
+Route::get('password/reset/{token}/{email}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
 //--------------------------------------------
 // Route::get('/home', 'HomeController@index')->name('home');    
 
@@ -53,6 +53,10 @@ Route::get('/brands',function(){
     return view('website.brands');
 })->name('brands');
 
+Route::get('/image_cropper',function(){
+    return view('image_cropper');
+})->name('image_cropper');
+
 
 
 Route::get('/social-info',function(){
@@ -62,20 +66,20 @@ Route::get('/social-info',function(){
 Route::group(['prefix'=>'social-info', 'as'=>'social-info.'], function(){
    
     Route::get('/edit', 'SocialinfoController@edit')->name('edit');
-    Route::put('/{id}', 'SocialinfoController@update')->name('update');
+     Route::put('/{id}', 'SocialinfoController@update')->name('update');
     
 });
 Route::group(['prefix'=>'password', 'as'=>'password.'], function(){
    
     Route::get('/edit/{id?}', 'ProfileController@passedit')->name('edit');
-    Route::put('/{id?}', 'ProfileController@passupdate')->name('update');
+    Route::put('/{id?}', 'ProfileController@passupdate')->name('update-profile');
     
 });
 
 
   Route::group(['namespace' => 'AdminAuth', 'prefix'=> 'admin', 'as'=>'admin.'], function () {
     Route::get('/login', 'LoginController@showLoginForm');
-    Route::post('/login', 'LoginController@login')->name('login');
+    Route::post('login', 'LoginController@login')->name('login');
     Route::put('/logout', 'LoginController@logout')->name('logout');
   
     Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
@@ -90,8 +94,8 @@ Route::group(['prefix'=>'password', 'as'=>'password.'], function(){
 
 route::view('siteadmin/dashboard','siteadmin.website.index');
 
-Route::group(['middleware'=>'auth'], function(){
-    
+Route::group(['middleware'=>['auth', 'verified'] ], function(){
+    // verified
     Route::get('/profile',function(){
         return view('website.profile');
     })->name('profile');

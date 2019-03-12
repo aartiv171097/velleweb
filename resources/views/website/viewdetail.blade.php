@@ -65,14 +65,20 @@
     
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group profile-form">
+                                    <label>Product Link</label>
+                                    <input type="url" class="form-control" readonly="readonly"  name="product_link" id="product_link" value="{{ $user['product_link'] }}"/>
+                                </div>
+                            </div>
                              @if(Auth::guard('admin')->user())
                             <div class="col-md-6">
                                 <div class="form-group profile-form">
                                     <div class="bg-white box-style p-2 mt-4" style="border-radius:8px">
                                          <select class="form-control social-input" style="width:100%" name="promote" id="promote">
-                                          <option {{  $user->promote == "Male" ? 'selected' : '' }} value="Male" >Male</option>
-                                          <option {{  $user->promote == "Female" ? 'selected' : '' }} value="Female">Female</option>
-                                          <option {{  $user->promote == "Both" ? 'selected' : '' }} value="Both">Both</option></select>
+                                          <option {{  $user['promote'] == "Male" ? 'selected' : '' }} value="Male" >Male</option>
+                                          <option {{  $user['promote'] == "Female" ? 'selected' : '' }} value="Female">Female</option>
+                                          <option {{  $user['promote'] == "Both" ? 'selected' : '' }} value="Both">Both</option></select>
                                          <div class="clearfix"></div>
                                     </div>                                  
                                 </div>                     

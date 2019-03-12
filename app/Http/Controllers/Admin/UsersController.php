@@ -12,6 +12,6 @@ class UsersController extends Controller
     public function index()
     {
         $serve=User::all();
-        return view('siteadmin.website.users', ['star'=> $serve]);
+        return view('siteadmin.website.users', ['user'=> $serve]);
     }
 }

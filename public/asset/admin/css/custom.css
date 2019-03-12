@@ -13,7 +13,7 @@ box-shadow: 14px 0px 33px -1px rgba(0,51,193,0.12);
 .skin-black .main-header>.navbar .navbar-nav>li>a { border-right:none; font-size:11px } 
 .skin-black .main-header>.navbar .nav>li>a i { font-size:21px}
 .skin-black .main-header>.navbar .nav>li:hover>a, .skin-black .main-header>.navbar .nav>li>a:focus { background: none; color: #999}
-.skin-black .sidebar a { color: #87abe8; border-bottom:#4887e1 thin solid; font-size: 15px; margin-left:25px; padding-left:0 }
+.skin-black .sidebar a { color: #87abe8;  font-size: 15px; margin-left:25px; padding-left:0 }
 .skin-black .sidebar ul li img { margin-right: 10px; width: 24px; }
 .skin-black .sidebar-menu>li:hover>a, .skin-black .sidebar-menu>li.active>a { color: #fff;}
 .skin-black { background: #414141}

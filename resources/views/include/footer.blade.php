@@ -3,7 +3,8 @@
         	<div class="container mb-5">
             	<div class="row">
                 	<div class="col-md-2 p-0">
-                    	<img src="{{ asset('asset/images/logo.png')}}" />
+                    	                    <a href="#" style="color: #fff !important; font-size:25px; font-weight:700;" >BrandCer</a>
+
                     </div>
                     <div class="col-md-2">
                     	<p class="text-uppercase f-16"><strong>Company</strong></h3>

@@ -6,7 +6,7 @@
                 <div class="slider-text text-left">
                     <div class="container">
                         <div class="col-md-5 p-0">
-                            <p class="f-22 mb-0 mt-5 pt-5 text-white text-uppercase title-shadow">Show Your Ad Inside the<br>Instagram Story of Influencers</p>
+                            <p class="f-22 mb-0 mt-5 pt-5 text-white text-uppercase title">Show Your Ad Inside the<br>Instagram Story of Influencers</p>
                             <img src="{{ asset('asset/images/p-line.png')}}" />
                             <p class="text-white mt-4 f-15">We find right  Influencers to show your<br>Content inside their personal story</p>
                         </div>

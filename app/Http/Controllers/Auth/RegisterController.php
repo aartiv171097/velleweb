@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;                 
+use Auth;
+use Session;
 
 class RegisterController extends Controller       
 {                                          
@@ -75,7 +77,10 @@ class RegisterController extends Controller
     {
        return view('website.indexsignup');
     }
-    
+    public function registered(){
+        Session::put('verify', 'Please verify your\'s Email Address');
+        // Auth::logout();
+    }
 }
 
 

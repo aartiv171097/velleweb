@@ -23,6 +23,8 @@ class DetailController extends Controller
         $user->phone = $request->phone;
         $user->location = $request->location;
         $user->category_name = $request->category_name;
+        $user->product_link = $request->product_link;
+        $user->promote = $request->promote;
         $user->message = $request->message;
         $user->brand_logo = $request->brand_logo;
         if($request->hasFile('brand_logo')){

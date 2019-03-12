@@ -1,15 +1,7 @@
 @extends('siteadmin.layouts.main')
 @section('css')
-
-<link href="{{ asset('dist/default/assets/vendors/base/vendors.bundle.css')}}" rel="stylesheet" type="text/css" />
-
-		
-		<link href="{{ asset('dist/default/assets/demo/default/base/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-
-		
-		<link href="{{ asset('dist/default/assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
-
-		<link rel="shortcut icon" href="{{ asset('dist/default/assets/demo/default/media/img/logo/favicon.ico')}}" />
+<link href="{{ asset('dist/default/assets/vendors/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="{{ asset('dist/default/assets/demo/default/media/img/logo/favicon.ico')}}" />
 
 @endsection
 @section('content')
@@ -56,7 +48,7 @@
                     </thead>
                     <tbody>
                  {{--  @php $i=1; @endphp--}}
-                        @foreach($star as $row)
+                        @foreach($detail as $row)
                     
                             
                             <tr>
@@ -103,12 +95,6 @@
 @endsection
 @section('js')
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-
-<script src="{{ asset('theme/default/assets/vendors/base/vendors.bundle.js')}}" type="text/javascript"></script>
-		<script src="{{ asset('theme/default/assets/demo/default/base/scripts.bundle.js')}}" type="text/javascript"></script>
-
-		<script src="{{ asset('theme/default/assets/vendors/custom/datatables/datatables.bundle.js')}}" type="text/javascript"></script>
-
 		<script src="{{ asset('theme/default/assets/demo/default/custom/crud/datatables/basic/basic.js')}}" type="text/javascript"></script>
 <script>
   window.pageData = window.pageData || {};

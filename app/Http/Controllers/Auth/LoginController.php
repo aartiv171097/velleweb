@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Auth;
+use Session;
 
 class LoginController extends Controller
 {
@@ -30,9 +32,28 @@ class LoginController extends Controller
     }
     public function handleLogin(Request $req)
     {
+
+
         $remember = $req->get('one');
         if(Auth::attempt(['email' => $req->email, 'password' => $req->password], $remember))
         {
+
+            
+                   $user = User::find(Auth::user()->id);
+
+
+
+                   if(isset($user->email_verified_at))
+                   {
+
+                   
+
+
+                   }
+
+
+    
+
             return redirect('/profile');
         }
 
@@ -59,6 +80,13 @@ class LoginController extends Controller
 
         return redirect('/login');
     }
-   
+    public  function Authenticated(){
+        if(empty(Auth::user()->email_verified_at)) {
+            Session::put('verify', "please verify account"); 
+            
+            // Auth::logout();
+        }
+        return;  
+    }  
 }
 

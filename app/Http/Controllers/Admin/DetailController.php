@@ -11,7 +11,7 @@ class DetailController extends Controller
     public function index()
     {
         $serve=Campaign::orderBy('id', 'desc')->get();
-        return view('siteadmin.website.detailsreq', ['star'=> $serve]);
+        return view('siteadmin.website.detailsreq', ['detail'=> $serve]);
     }
     public function show($id)
     {

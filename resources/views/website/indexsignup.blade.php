@@ -14,7 +14,6 @@
         <p class="text-uppercase f-16 text-theme font-semi-bold float-left">Creator Registration</p>
         <p class="float-right"><a href="#"><img src="{{ asset('assets/images/sign-in-white.jpg')}}" class="float-left" /></a> <a href=""><img src="{{ asset('assets/images/sign-up-blue.jpg')}}" class="float-left" /></a></p>
         <div class="clearfix"></div>
-        
         <input type="text" class="form-control sign-up" name="name" placeholder="Full Name" required  />
         <select class="form-control sign-up mt-0" name="category" required>
             <option value="">Select Category</option>
@@ -43,8 +42,8 @@
         </div>     
         <div class="clearfix"></div>                    
     </div>
-    <button  class="btn btn-primary login btn-block" type="submit" id="submit" class="submit">Sign Up</button> 
-    </form>         
+    <button  class="btn btn-primary login btn-block" type="submit" id="submit" class="submit" >Sign Up</button> 
+    </form>       
     <p class="mt-4 text-center text-dark-grey f-14">Already have an account? <a href="{{ route('login') }} " class="text-theme" style="text-decoration:underline">Login</a> here.</p>           
 </div>
 
@@ -72,5 +71,6 @@
 }
 
 </script>
+
 
 @endsection

@@ -60,7 +60,7 @@
                                         <td><img style="width:80px; border-radius:50%;" src="{{ asset('images/user_images'.'/'. $row->image) }}"></td>
                                         <td>{{$row->name}}</td>
                                         <td>{{ $row->email}}</td>
-                                        <td>{{ $row->email_verified_at}}</td>
+                                        <td>{{ $row->status==0 ? 'Not Verified' : 'Verified'}}</td>
 										<td nowrap></td>
 										
                                         </tr>

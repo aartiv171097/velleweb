@@ -70,41 +70,6 @@
 </section>
 
 
- <section class="client-bg">
-     <div class="container">
-         <div class="text-center" style="line-height:16px">
-            <p class="section-shadow section-col mb-0 f-20 font-semi-bold">Brands We've Worked With</p>
-            <img src="{{ asset('assets/images/section-line.png')}}" style="margin-left:-240px" />
-        </div>
-        
-        
-         <div class="owl-single mt-5">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="client-list">
-                        <li><img src="{{ asset('assets/images/c1.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c2.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c3.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c4.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c5.png') }}" /></li>
-                    </ul>
-                </div>                  
-            </div>
-             <div class="row">
-                <div class="col-md-12">
-                    <ul class="client-list">
-                        <li><img src="{{ asset('assets/images/c1.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c2.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c3.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c4.png') }}" /></li>
-                        <li><img src="{{ asset('assets/images/c5.png') }}" /></li>
-                    </ul>
-                </div>                  
-            </div>
-        </div>
-     
-     </div>
-</section>
 
    
 

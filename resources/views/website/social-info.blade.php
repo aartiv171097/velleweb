@@ -31,8 +31,8 @@ wrapper {
         <section class="content pb-0">
             <div class="row">
             <form method="POST" action="{{ route('social-info.update' , Auth::user())}}" enctype="multipart/form-data">
-    {{ csrf_field() }}
-    {{method_field('put')}}
+            {{ csrf_field() }}
+             {{method_field('put')}}
               @php 
                 $user = Auth::user();
                 
@@ -43,13 +43,13 @@ wrapper {
                   <p class="text-center text-black f-14 mt-5 mb-2 text-dark-grey">Add Your Instagram Profile Link </p>
               
                     <div class="bg-white box-style p-2 mt-4 mb-3">
-                         <input type="text" class="form-control " name="link" value="{{ $user->link }}"  /> 
+                         <input type="text" class="form-control " name="link" value="{{ $user->link }}" required /> 
                         </div>
                         <div class="clearfix"></div> 
                     <p class="text-center text-black f-14 mt-5 mb-2 text-dark-grey">Avg. numnber of impression per story</p>
               
                     <div class="bg-white box-style p-2 mt-4 mb-3">
-                         <input type="text" class="form-control " name="aips" value="{{ $user->aips }}" placeholder="E.g. 10,000" /> 
+                         <input type="number" class="form-control " name="aips" value="{{ $user->aips }}" placeholder="E.g. 10,000" required /> 
                         </div>
                          <div class="clearfix"></div>
                    
@@ -57,7 +57,7 @@ wrapper {
                     <p class="text-center text-black f-14 mt-4 mb-2 text-dark-grey">Avg. numnber of impression per Post</p>
               
                     <div class="bg-white box-style p-2 mt-4 mb-3">
-                    <input type="text" class="form-control  " name="aipp" value="{{ $user->aipp }}" placeholder="E.g. 10,000" /> 
+                    <input type="number" class="form-control  " name="aipp" value="{{ $user->aipp }}" placeholder="E.g. 10,000" required/> 
                        <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
@@ -117,6 +117,17 @@ wrapper {
     @endsection  
     @section('js')
     <script>
+
+
+
+
+$("form").submit(function(){
+	     window.somethingMadeChange=false;
+
+  
+});
+
+
      window.somethingMadeChange=false;
      (function(){
        $(window).on("beforeunload", function() {

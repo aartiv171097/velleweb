@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-     public $redirectTo = '/admin/dashboard';
+     public $redirectTo = '/admin';
 
     public function __construct()
     {

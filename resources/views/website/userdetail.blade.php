@@ -56,6 +56,12 @@
                   </div>
               </div>
               <div class="col-md-6">
+                    <div class="form-group profile-form">
+                        <label>Product Link</label>
+                        <input type="url" class="form-control" placeholder="Enter your product link" name="product_link" value="" required>
+                    </div>
+                </div>
+              <div class="col-md-6">
                   <div class="form-group profile-form">
                       <div class="bg-white box-style p-2 mt-4" style="border-radius:8px">
                            <select class="form-control social-input" style="width:100%" name="promote" required>
@@ -79,6 +85,7 @@
                       </div>                                  
                   </div>                     
               </div>
+              
                 
               <div class="col-md-12 mt-5"><p class="font-weight-bold f-15">Campaign Details For Instagram Story</p></div>
               

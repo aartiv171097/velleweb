@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="page-wrap">
-            <div class="login-bg">
+            <div class="login-bg" style="min-height:100vh; position:inherit;">
                 <div class="container">
                     @yield('content')
                 </div>

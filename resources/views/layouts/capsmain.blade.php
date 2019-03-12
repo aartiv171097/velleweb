@@ -9,7 +9,7 @@
 <body class="skin-black" style="background-color:#41414100; ">
     <div class="wrapper"> 
         @include('include.sidebar')
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="min-height:100vh;">
             <div class="container-fluid">
             @yield('content')
             </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use Hash;
 use Auth;
+use File;
 
 class ProfileController extends Controller
 {
@@ -22,27 +23,32 @@ class ProfileController extends Controller
 
         $user = User::find($id);
        
-        if($request->hasFile('profilepic')){
-            $path = public_path(). '/images/user_images';
-
+        if(!empty($picture=$request->profilepic)){
+            
+            $data = base64_decode(explode( ',', $picture)[1]);
+            $path = public_path().'/images/user_images';
+            
             if (!file_exists($path) && !is_dir($path)) {
-                File::makeDirectory($path,0777,true, true);
+                mkdir($path);
             }
 
-            $image = $request->profilepic;
-            $random=rand(1,1000000);
-            $image_name = $image->getClientOriginalExtension();
-            $image_name=$random.'.'.$image_name;
-            $image_name = str_replace(' ', '_', $image_name);
-            $upload=$image->move($path, $image_name);
+            $image_name=uniqid().'.jpg';
+            $file=$path.'/'.$image_name;
+          //  dd(file_put_contents($file, $data));
+            
+            if(!file_put_contents($file, $data)) {
+                return response()->json(['message'=>'image not upload','status'=>503]);
+            }
             $user->image = $image_name;
-        } else {
+            
+        }else {
             $user->image = $request->old_image;
         }
 
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
+
         $user->save();
         return redirect('/profile');
     }
@@ -59,7 +65,9 @@ class ProfileController extends Controller
     {  
        
 
-        $user = User::find($user);
+        $user = User::find(Auth::user()->id);
+
+        //dd($user);
         // dd($user);
         // dd($user->makeVisible('password')->toArray());
         $user->password = Hash::make($request->password);

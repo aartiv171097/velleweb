@@ -6,7 +6,7 @@
 <div class="row" style="padding:30px;">         
     <section class="content pb-0">
       <div class="row" style="margin:100px;">
-        <section class="col-md-8 col-md-offset-1 pt-5 pb-0">
+        <section class="col-md-12  pt-5 pb-0">
         <form  action="{{ route('password.update') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
              {{method_field('put')}}

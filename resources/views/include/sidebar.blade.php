@@ -16,6 +16,11 @@
       <p class="text-center mt-1"><img src="{{ asset('asset/images/p-line.png')}}" /></p>
       
       <ul class="sidebar-menu">
+
+    <li class="treeview">
+          <a href="{{ url('/') }}"><img src="{{ asset('assets/images/home.png')}}" /> <span> Home </span></a>
+        </li>
+
         <li class="treeview">
           <a href="{{ route('campaign') }}"><img src="{{ asset('asset/images/camp.png')}}" /> <span> Campaign </span></a>
         </li>
