@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/css/bootstrap.min.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/css/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/css/jquery-ui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/css/effect.css')}}">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/css/web-main-style.css')}}">
 <link href="{{ asset('asset/admin/css/AdminLTE.css')}}" rel="stylesheet" type="text/css" /> 

@@ -40,6 +40,9 @@ Route::get('password/reset/{token}/{email}','Auth\ResetPasswordController@showRe
 // });
 
 Route::get('/camp', 'CampController@index')->name('campaign');
+Route::get('/campsocial',function(){
+    return view('website.campsocial');
+})->name('campsocial');
 Route::get('/details',function(){
     return view('website.details');
 });
@@ -52,6 +55,12 @@ Route::get('/createcampaign',function(){
 Route::get('/brands',function(){
     return view('website.brands');
 })->name('brands');
+Route::get('/aboutus',function(){
+    return view('website.aboutus');
+})->name('aboutus');
+Route::get('/contactus',function(){
+    return view('website.contactus');
+})->name('contactus');
 
 Route::get('/image_cropper',function(){
     return view('image_cropper');

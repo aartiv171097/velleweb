@@ -164,10 +164,10 @@ input.sign-up, select.sign-up { background:#f8f8f8; border:none; box-shadow:none
 
 .title-shadow { text-shadow: 2px -3px 0px #3272A4; }
 .section-shadow { text-shadow: 2px -2px 0px #C6CFC8; }
-.section-col { color:#012d06 }
+.section-col { color:#000 }
 
 .what-bg { background:url(../images/section-bg.jpg) no-repeat; background-size:cover; margin-top:-5px; padding-bottom:200px }
-.what-box { border-radius:15px; background:#fff; color:#012d06; font-weight:500; min-height:150px; padding:30px 25px 45px; font-size:18px; -webkit-box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); -moz-box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); margin:30px 0 15px }
+.what-box { border-radius:15px; background:#fff; color:#000; font-weight:500; min-height:150px; padding:30px 25px 45px; font-size:18px; -webkit-box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); -moz-box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); box-shadow: 10px 13px 22px -10px rgba(143,143,143,0.3); margin:30px 0 15px }
 
 .position-rel { position:relative }
 .story-text { position:absolute; top:150px; }
@@ -205,7 +205,7 @@ footer { background:url(../images/footer-bg.jpg) no-repeat #437de4; background-s
 .brand-slide { background:url(../images/brand-bg.jpg) no-repeat top center; height:520px; padding-top:150px }
 .brand-text-bg { background:rgba(0,0,0,0.5); padding:35px 45px 45px 35px; border:#fff thin solid; border-radius:10px }
 .footer-brand { background:#437de4; padding-top:35px }
-.brd-txt { color:#012d06 }
+.brd-txt { color:#000 }
 
 .client-bg { background:#e8eff9 }
 .owl-controls .owl-pagination { display:none }
